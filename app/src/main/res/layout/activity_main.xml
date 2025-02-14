@@ -56,6 +56,39 @@
             android:hint="Digite o número de pessoa à mesa" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <RadioGroup
+        android:id="@+id/rg_percentage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@+id/til_number_of_people"
+        app:layout_constraintTop_toBottomOf="@+id/til_number_of_people">
+
+        <RadioButton
+            android:id="@+id/rb_option_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10%">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rb_option_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15%">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rb_option_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20%">
+        </RadioButton>
+
+    </RadioGroup>
+
     <Button
         android:id="@+id/btn_clean"
         android:layout_width="0dp"
@@ -65,7 +98,7 @@
         android:text="limpar"
         app:layout_constraintEnd_toStartOf="@+id/vertical_guideline"
         app:layout_constraintStart_toStartOf="@+id/til_number_of_people"
-        app:layout_constraintTop_toBottomOf="@+id/til_number_of_people">
+        app:layout_constraintTop_toBottomOf="@+id/rg_percentage">
 
     </Button>
 
@@ -78,7 +111,7 @@
         android:text="calcular"
         app:layout_constraintEnd_toEndOf="@+id/til_number_of_people"
         app:layout_constraintStart_toStartOf="@+id/vertical_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/til_number_of_people">
+        app:layout_constraintTop_toBottomOf="@+id/rg_percentage">
 
     </Button>
     
