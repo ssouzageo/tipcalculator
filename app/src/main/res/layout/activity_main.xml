@@ -35,7 +35,7 @@
         tools:layout_editor_absoluteX="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tei_total"
+            android:id="@+id/tie_total"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/til_total">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tei_numpeople"
+            android:id="@+id/tie_numpeople"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
