@@ -1,12 +1,17 @@
 package com.example.tipcalculator
 
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.collection.emptyLongSet
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.tipcalculator.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
@@ -20,8 +25,9 @@ class MainActivity : AppCompatActivity() {
     6. Botão limpar;
     7. Botão calcular;
     8. Ids;
-    9. Recuperar as views do layout; e
-    10. Usar o ViewBiding.
+    9. Recuperar as views do layout;
+    10. Usar o ViewBiding; e
+    11. Mostrar resultado.
      */
 
     private lateinit var binding: ActivityMainBinding
@@ -51,23 +57,56 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // O adapter adapta dados/números a uma layout.
+        val adapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.num_people,
+            android.R.layout.simple_spinner_item
+        )
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.spinnerNumberOfPeople.adapter = adapter
+
+        var NumOfPeopleSelected = 0
+        binding.spinnerNumberOfPeople.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                NumOfPeopleSelected = position
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+        }
+
         binding.btnClean.setOnClickListener {
-
-            println("Geo clean " + binding.tieTotal.text)
-            println("Geo clean " + binding.tieNumpeople.text)
-
+            binding.tvResult.text = ""
+            binding.tieTotal.setText("")
+            binding.rbOptionOne.isChecked = false
+            binding.rbOptionTwo.isChecked = false
+            binding.rbOptionThree.isChecked = false
         }
 
         binding.btnDone.setOnClickListener {
 
-            val totalTable: Float = binding.tieTotal.text.toString().toFloat()
-            val numPeople: Int = binding.tieNumpeople.text.toString().toInt()
+            val totalTableTemp = binding.tieTotal.text
 
-            val totalTemp = totalTable / numPeople
-            val tips = totalTemp * percentage / 100
-            val totalWithtTips = totalTemp + tips
+            if (totalTableTemp?.isEmpty() == true) {
+                Snackbar.make(binding.tilTotal, "Preencha todos os campos.", Snackbar.LENGTH_LONG)
+                    .show()
+            } else {
 
-            println("Geo "+ totalWithtTips)
+                val totalTable: Float = totalTableTemp.toString().toFloat()
+                val numPeople: Int = NumOfPeopleSelected
+
+                val totalTemp = totalTable / numPeople
+                val tips = totalTemp * percentage / 100
+                val totalWithTips = totalTemp + tips
+                binding.tvResult.text = "Total with tips: $totalWithTips"
+            }
+
         }
     }
 

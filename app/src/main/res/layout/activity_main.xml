@@ -42,21 +42,12 @@
             android:hint="Digite o valor da conta" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_number_of_people"
+    <Spinner
+        android:id="@+id/spinner_number_of_people"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/til_total">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tie_numpeople"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:maxLength="2"
-            android:hint="Digite o número de pessoa à mesa" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/til_total"/>
 
     <RadioGroup
         android:id="@+id/rg_percentage"
@@ -65,8 +56,8 @@
         android:layout_marginTop="16dp"
         android:orientation="horizontal"
         android:gravity="center"
-        app:layout_constraintEnd_toEndOf="@+id/til_number_of_people"
-        app:layout_constraintTop_toBottomOf="@+id/til_number_of_people">
+        app:layout_constraintEnd_toEndOf="@id/spinner_number_of_people"
+        app:layout_constraintTop_toBottomOf="@id/spinner_number_of_people">
 
         <RadioButton
             android:id="@+id/rb_option_one"
@@ -99,7 +90,7 @@
         android:layout_marginEnd="4dp"
         android:text="limpar"
         app:layout_constraintEnd_toStartOf="@+id/vertical_guideline"
-        app:layout_constraintStart_toStartOf="@+id/til_number_of_people"
+        app:layout_constraintStart_toStartOf="@+id/spinner_number_of_people"
         app:layout_constraintTop_toBottomOf="@+id/rg_percentage">
 
     </Button>
@@ -111,7 +102,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginStart="4dp"
         android:text="calcular"
-        app:layout_constraintEnd_toEndOf="@+id/til_number_of_people"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_number_of_people"
         app:layout_constraintStart_toStartOf="@+id/vertical_guideline"
         app:layout_constraintTop_toBottomOf="@+id/rg_percentage">
 
@@ -124,5 +115,15 @@
         app:layout_constraintGuide_percent="0.5"
         android:orientation="vertical">
     </androidx.constraintlayout.widget.Guideline>
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        tools:text="57.5"
+        android:textSize="24sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/btn_clean" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
