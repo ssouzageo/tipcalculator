@@ -1,5 +1,6 @@
 package com.example.tipcalculator
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -80,15 +81,12 @@ class MainActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
         }
-
         binding.btnClean.setOnClickListener {
-            binding.tvResult.text = ""
             binding.tieTotal.setText("")
             binding.rbOptionOne.isChecked = false
             binding.rbOptionTwo.isChecked = false
             binding.rbOptionThree.isChecked = false
         }
-
         binding.btnDone.setOnClickListener {
 
             val totalTableTemp = binding.tieTotal.text
@@ -104,10 +102,16 @@ class MainActivity : AppCompatActivity() {
                 val totalTemp = totalTable / numPeople
                 val tips = totalTemp * percentage / 100
                 val totalWithTips = totalTemp + tips
-                binding.tvResult.text = "Total with tips: $totalWithTips"
-            }
 
+                val intent = Intent(this, SummaryActivity :: class.java)
+                intent.apply {
+                    putExtra("totalTable", totalTable)
+                    putExtra("numPeople", numPeople)
+                    putExtra("percentage", percentage)
+                    putExtra("totalTips", totalWithTips)
+                }
+                startActivity(intent)
+            }
         }
     }
-
 }
