@@ -17,20 +17,6 @@ import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
 
-    /*
-    1. Título;
-    2. Subtítulo;
-    3. Valor total;
-    4. Quantidade de pessoas;
-    5. Porcentagem (10%, 15%, 20%);
-    6. Botão limpar;
-    7. Botão calcular;
-    8. Ids;
-    9. Recuperar as views do layout;
-    10. Usar o ViewBiding; e
-    11. Mostrar resultado.
-     */
-
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,8 +43,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
-        // O adapter adapta dados/números a uma layout.
         val adapter = ArrayAdapter.createFromResource(
             this,
             R.array.num_people,
@@ -82,10 +66,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         binding.btnClean.setOnClickListener {
-            binding.tieTotal.setText("")
-            binding.rbOptionOne.isChecked = false
-            binding.rbOptionTwo.isChecked = false
-            binding.rbOptionThree.isChecked = false
+            clean()
         }
         binding.btnDone.setOnClickListener {
 
@@ -110,8 +91,15 @@ class MainActivity : AppCompatActivity() {
                     putExtra("percentage", percentage)
                     putExtra("totalTips", totalWithTips)
                 }
+                clean()
                 startActivity(intent)
             }
         }
+    }
+    private fun clean() {
+            binding.tieTotal.setText("")
+            binding.rbOptionOne.isChecked = false
+            binding.rbOptionTwo.isChecked = false
+            binding.rbOptionThree.isChecked = false
     }
 }
