@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnDone.setOnClickListener {
 
-            val totalTableTemp = binding.tieTotal.text
+            val totalTableTemp = binding.tieTotal.text 
 
             if (totalTableTemp?.isEmpty() == true) {
                 Snackbar.make(binding.tilTotal, "Preencha todos os campos.", Snackbar.LENGTH_LONG)
