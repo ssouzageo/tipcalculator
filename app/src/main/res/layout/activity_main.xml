@@ -13,7 +13,7 @@
         android:layout_margin="16dp"
         android:gravity="center"
         android:text="Tips Calculator"
-        android:textSize="32sp"
+        style="@style/Title"
         app:layout_constraintTop_toTopOf="parent">
     </TextView>
 
@@ -82,9 +82,10 @@
 
     </RadioGroup>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_clean"
         android:layout_width="0dp"
+        style="@style/Widget.Material3.Button.OutlinedButton"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="4dp"
@@ -93,7 +94,7 @@
         app:layout_constraintStart_toStartOf="@+id/spinner_number_of_people"
         app:layout_constraintTop_toBottomOf="@+id/rg_percentage">
 
-    </Button>
+    </com.google.android.material.button.MaterialButton>
 
     <Button
         android:id="@+id/btn_done"
@@ -107,7 +108,7 @@
         app:layout_constraintTop_toBottomOf="@+id/rg_percentage">
 
     </Button>
-    
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical_guideline"
         android:layout_width="wrap_content"
