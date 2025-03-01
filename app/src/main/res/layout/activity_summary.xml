@@ -9,11 +9,11 @@
 
     <TextView
         android:id="@+id/tv_summary"
+        style="@style/Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:text="Summary"
-        android:textSize="32sp"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="16dp" />
 
@@ -40,9 +40,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        tools:text="R$ 100,00"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_totaltable_label" />
+        app:layout_constraintTop_toTopOf="@+id/tv_totaltable_label"
+        tools:text="R$ 100,00" />
 
     <TextView
         android:id="@+id/tv_numofpeople_label"
@@ -57,18 +57,18 @@
         android:id="@+id/tv_numofpeople"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="5"
         app:layout_constraintEnd_toEndOf="@+id/tv_totaltable"
-        app:layout_constraintTop_toTopOf="@+id/tv_numofpeople_label" />
+        app:layout_constraintTop_toTopOf="@+id/tv_numofpeople_label"
+        tools:text="5" />
 
     <TextView
         android:id="@+id/tv_percentage_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:text="percentage"
         app:layout_constraintStart_toStartOf="@+id/tv_numofpeople_label"
-        app:layout_constraintTop_toBottomOf="@+id/tv_numofpeople_label"
-        android:text="percentage" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_numofpeople_label" />
 
     <TextView
         android:id="@+id/tv_percentage"
@@ -100,8 +100,8 @@
         android:id="@+id/tv_totalamount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/tv_separator"
         app:layout_constraintTop_toTopOf="@+id/tv_totalamount_label"
         tools:text="R$ 57.50" />
