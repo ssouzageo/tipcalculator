@@ -102,9 +102,10 @@
         android:layout_height="wrap_content"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:maxLength="5"
         app:layout_constraintEnd_toEndOf="@+id/tv_separator"
         app:layout_constraintTop_toTopOf="@+id/tv_totalamount_label"
-        tools:text="R$ 57.50" />
+        tools:text="57.50" />
 
     <Button
         android:id="@+id/btn_refresh"
