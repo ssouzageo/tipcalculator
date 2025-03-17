@@ -22,7 +22,7 @@ class SummaryActivity : AppCompatActivity() {
         val percentage = intent.getIntExtra("percentage", 0)
         val totalWithTips = intent.getFloatExtra("totalTips", 0.0f)
 
-        binding.tvPercentage.text = percentage.toString()
+        binding.tvPercentage.text = percentage.toString() + "%"
         binding.tvTotaltable.text = totalTable.toString()
         binding.tvNumofpeople.text = numPeople.toString()
         binding.tvTotalamount.text = totalWithTips.toString()
