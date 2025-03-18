@@ -2,4 +2,18 @@
 <resources>
     <string name="app_name">Calculadora Gorjeta</string>
     <string name="subtitle">Preencha os campos abaixo para resolver o cálculo da conta.</string>
+    <string name="label_table_amount">Digite o valor da conta:</string>
+    <string name="hint_table_amount">R$ 200.00</string>
+    <string name="label_num_people">Número de pessoas:</string>
+    <string name="hint_num_people">4</string>
+    <string name="label_percentage">Porcentagem da gorjeta:</string>
+    <string name="hint_percentage">10%</string>
+    <string name="calculer">calcular</string>
+    <string name="clean">limpar</string>
+    <string name="summary">Resumo</string>
+    <string name="summary_subtile">Veja os detalhes da sua conta abaixo.</string>
+    <string name="total_table_summary">Valor da conta:</string>
+    <string name="num_people_summary">Número de pessoas</string>
+    <string name="percentage_summary">porcentagem</string>
+    <string name="total">TOTAL</string>
 </resources>

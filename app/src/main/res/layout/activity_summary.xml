@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Summary"
+        android:text="@string/summary"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="16dp" />
 
@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="See your account details below."
+        android:text="@string/summary_subtile"
         app:layout_constraintStart_toStartOf="@+id/tv_summary"
         app:layout_constraintTop_toBottomOf="@+id/tv_summary" />
 
@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="total table:"
+        android:text="@string/total_table_summary"
         app:layout_constraintStart_toStartOf="@+id/tv_subtitle"
         app:layout_constraintTop_toBottomOf="@+id/tv_subtitle" />
 
@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="num of people"
+        android:text="@string/num_people_summary"
         app:layout_constraintStart_toStartOf="@+id/tv_totaltable_label"
         app:layout_constraintTop_toBottomOf="@+id/tv_totaltable_label" />
 
@@ -66,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="percentage"
+        android:text="@string/percentage_summary"
         app:layout_constraintStart_toStartOf="@+id/tv_numofpeople_label"
         app:layout_constraintTop_toBottomOf="@+id/tv_numofpeople_label" />
 
@@ -92,7 +92,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="TOTAL"
+        android:text="@string/total"
         app:layout_constraintStart_toStartOf="@+id/tv_percentage_label"
         app:layout_constraintTop_toBottomOf="@+id/tv_separator" />
 
